@@ -12,7 +12,6 @@ venv/
 
 # Local artifacts / tracking
 mlruns/
-artifacts/
 data/
 
 # OS/editor
