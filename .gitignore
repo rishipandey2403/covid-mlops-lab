@@ -17,7 +17,6 @@ data/raw/
 data/processed/
 
 # Artifacts
-artifacts/
 mlruns/
 
 # OS / editor
