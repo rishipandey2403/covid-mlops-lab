@@ -1,0 +1,30 @@
+
+#### 2) `.gitignore`
+```gitignore
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+.build/
+.venv/
+venv/
+
+# Data
+data/raw/
+data/processed/
+
+# Artifacts
+artifacts/
+mlruns/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log
+

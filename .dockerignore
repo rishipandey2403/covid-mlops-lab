@@ -1,0 +1,26 @@
+# VCS
+.git
+.github
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+
+# Local artifacts / tracking
+mlruns/
+artifacts/
+data/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# Tests & caches
+.pytest_cache/
+.ruff_cache/
+

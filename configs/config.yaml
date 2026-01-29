@@ -1,0 +1,53 @@
+project:
+  name: covid-mlops-lab
+  seed: 42
+
+paths:
+  raw_csv: data/raw/Covid Data.csv
+  artifacts_dir: artifacts
+  models_dir: artifacts/models
+  reports_dir: artifacts/reports
+
+data:
+  target_col: DIED
+  date_died_col: DATE_DIED
+  alive_code: "9999-99-99"
+
+  # Treat these codes as "unknown / not applicable" across coded columns.
+  unknown_codes: [97, 98, 99]
+
+  # Features to USE at/near admission (avoid leakage).
+  # Excluding: DATE_DIED (label source), ICU, INTUBED (post-admission escalation / intervention)
+  features:
+    numeric:
+      - AGE
+    categorical:
+      - USMER
+      - MEDICAL_UNIT
+      - SEX
+      - PATIENT_TYPE
+      - PNEUMONIA
+      - PREGNANT
+      - DIABETES
+      - COPD
+      - ASTHMA
+      - INMSUPR
+      - HIPERTENSION
+      - OTHER_DISEASE
+      - CARDIOVASCULAR
+      - OBESITY
+      - RENAL_CHRONIC
+      - TOBACCO
+      - CLASIFFICATION_FINAL
+
+  # Explicit columns to drop if present
+  drop_cols:
+    - DATE_DIED
+    - ICU
+    - INTUBED
+
+split:
+  test_size: 0.20
+  val_size: 0.20      # applied on the remaining train after test split
+  stratify: true
+
